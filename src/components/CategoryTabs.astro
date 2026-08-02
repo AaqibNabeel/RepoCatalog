@@ -12,7 +12,7 @@ const { activeSlug = null } = Astro.props;
   {categories.map((cat) => (
     <a
       class:list={['tab', { active: activeSlug === cat.slug }]}
-      href={`/category/${cat.slug}/`}
+      href={`${import.meta.env.BASE_URL}/category/${cat.slug}/`}
     >
       <svg width="10" height="10" viewBox="0 0 16 16" fill="currentColor" style={{ color: cat.color }}>
         <path d={ICONS.gitBranch} />
