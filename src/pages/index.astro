@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CategoryTabs from '../components/CategoryTabs.astro';
+import SearchBar from '../components/SearchBar.astro';
+import RepoGrid from '../components/RepoGrid.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import repos from '../data/repos.json';
+
+// Newest-first by default; swap to a "trending" sort later if you add one.
+const sortedRepos = [...repos].sort(
+  (a, b) => new Date(b.added_at).getTime() - new Date(a.added_at).getTime()
+);
+---
+<BaseLayout>
+  <div class="wrap">
+    <header class="top">
+      <h1>Repo<span class="accent">Catalog</span></h1>
+      <p class="tagline">// curated github repos, sorted by what you actually need</p>
+    </header>
+
+    <SearchBar />
+    <CategoryTabs />
+    <RepoGrid repos={sortedRepos} />
+    <SiteFooter />
+  </div>
+</BaseLayout>
+
+<style>
+  .top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  h1 { font-size: 28px; }
+  h1 .accent { color: var(--accent); }
+  .tagline { font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft); margin: 0; }
+</style>

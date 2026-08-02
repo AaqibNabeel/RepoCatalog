@@ -1,0 +1,138 @@
+---
+import { ICONS } from './icons.js';
+
+interface Props {
+  // When true (category pages), a no-results state offers a link back to
+  // the homepage with the query carried over via ?q=, since search here
+  // is intentionally scoped to just this category.
+  crossCategoryLink?: boolean;
+}
+const { crossCategoryLink = false } = Astro.props;
+---
+<div class="search-row" data-cross-category={crossCategoryLink ? 'true' : 'false'}>
+  <div class="search-box">
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d={ICONS.search} /></svg>
+    <input id="search" type="text" placeholder="grep repo-name, description, category..." autocomplete="off" />
+  </div>
+</div>
+
+<style>
+  .search-row {
+    position: sticky;
+    top: 0;
+    background: var(--paper);
+    padding: 16px 0;
+    z-index: 10;
+    margin-bottom: 8px;
+  }
+  .search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--card);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius);
+    padding: 10px 14px;
+  }
+  .search-box svg { flex-shrink: 0; color: var(--ink-soft); }
+  .search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--ink);
+    width: 100%;
+  }
+  .search-box input::placeholder { color: var(--ink-soft); }
+</style>
+
+<style is:global>
+  .empty-link {
+    color: var(--accent);
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+  }
+  .empty-link:hover { opacity: 0.8; }
+</style>
+
+<script>
+  import Fuse from 'fuse.js';
+
+  // Search operates on whatever RepoCards are already rendered on this
+  // page (index = all repos, category page = that category's repos).
+  // No fetch, no separate data load — the DOM is the dataset.
+  const grid = document.getElementById('repo-grid');
+  const emptyState = document.getElementById('empty-state');
+  const countEl = document.getElementById('result-count');
+  const searchInput = document.getElementById('search') as HTMLInputElement | null;
+  const searchRow = document.querySelector('.search-row') as HTMLElement | null;
+  const crossCategoryLink = searchRow?.dataset.crossCategory === 'true';
+
+  function escapeHtml(s: string) {
+    return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c] as string));
+  }
+
+  if (grid && searchInput) {
+    const cards = Array.from(grid.querySelectorAll<HTMLElement>('.repo-card'));
+    const records = cards.map((el, i) => ({
+      i,
+      text: el.dataset.searchBlob || '',
+    }));
+
+    const fuse = new Fuse(records, {
+      keys: ['text'],
+      threshold: 0.35,
+      ignoreLocation: true,
+    });
+
+    const totalLabel = () => `${cards.length} repo${cards.length !== 1 ? 's' : ''}`;
+    if (countEl) countEl.textContent = totalLabel();
+
+    function runSearch(q: string) {
+      if (!q) {
+        cards.forEach((c) => (c.style.display = ''));
+        if (countEl) countEl.textContent = totalLabel();
+        if (emptyState) emptyState.style.display = 'none';
+        if (grid) grid.style.display = 'grid';
+        return;
+      }
+
+      const matches = new Set(fuse.search(q).map((r) => r.item.i));
+      let visible = 0;
+      cards.forEach((c, i) => {
+        const show = matches.has(i);
+        c.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+
+      if (countEl) countEl.textContent = `${visible} repo${visible !== 1 ? 's' : ''}`;
+
+      if (visible === 0) {
+        if (grid) grid.style.display = 'none';
+        if (emptyState) {
+          emptyState.style.display = 'block';
+          if (crossCategoryLink) {
+            emptyState.innerHTML = `No matches for "${escapeHtml(q)}" in this category. <a class="empty-link" href="/?q=${encodeURIComponent(q)}">Search all repos instead →</a>`;
+          } else {
+            emptyState.textContent = `No matches for "${q}". Try a broader term or browse by category.`;
+          }
+        }
+      } else {
+        if (grid) grid.style.display = 'grid';
+        if (emptyState) emptyState.style.display = 'none';
+      }
+    }
+
+    searchInput.addEventListener('input', () => runSearch(searchInput.value.trim()));
+
+    // Deep-link support: /?q=term prefills and runs the search on load,
+    // so the cross-category empty-state link above actually lands somewhere useful.
+    const initialQuery = new URLSearchParams(window.location.search).get('q');
+    if (initialQuery) {
+      searchInput.value = initialQuery;
+      runSearch(initialQuery.trim());
+    }
+  }
+</script>

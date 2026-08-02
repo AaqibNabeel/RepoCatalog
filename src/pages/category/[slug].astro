@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CategoryTabs from '../../components/CategoryTabs.astro';
+import SearchBar from '../../components/SearchBar.astro';
+import RepoGrid from '../../components/RepoGrid.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import categories from '../../data/categories.json';
+import repos from '../../data/repos.json';
+
+export function getStaticPaths() {
+  return categories.map((cat) => ({
+    params: { slug: cat.slug },
+    props: { category: cat },
+  }));
+}
+
+const { category } = Astro.props;
+const categoryRepos = repos
+  .filter((r) => r.category === category.slug)
+  .sort((a, b) => new Date(b.added_at).getTime() - new Date(a.added_at).getTime());
+---
+<BaseLayout title={`${category.label} — RepoCatalog`}>
+  <div class="wrap">
+    <header class="top">
+      <h1><a href="/" class="home-link">Repo<span class="accent">Catalog</span></a></h1>
+      <p class="tagline">// {category.label}</p>
+    </header>
+
+    <SearchBar crossCategoryLink />
+    <CategoryTabs activeSlug={category.slug} />
+    <RepoGrid repos={categoryRepos} />
+    <SiteFooter />
+  </div>
+</BaseLayout>
+
+<style>
+  .top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  h1 { font-size: 28px; }
+  h1 .accent { color: var(--accent); }
+  .home-link { text-decoration: none; }
+  .tagline { font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft); margin: 0; }
+</style>

@@ -1,0 +1,24 @@
+---
+import { ICONS } from './icons.js';
+---
+<footer class="site-footer">
+  <span>Every card links out to</span>
+  <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor"><path d={ICONS.markGithub} /></svg>
+  <span>GitHub — nothing is hosted here.</span>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--hairline);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+  .site-footer svg { vertical-align: -2px; }
+</style>

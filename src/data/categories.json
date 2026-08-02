@@ -1,0 +1,8 @@
+[
+  { "slug": "productivity", "label": "Productivity",  "color": "#3A6B4C" },
+  { "slug": "design",       "label": "Design & UI",   "color": "#6B4C9A" },
+  { "slug": "ai",           "label": "AI/ML",         "color": "#2E6B8C" },
+  { "slug": "devtools",     "label": "DevTools",      "color": "#8C6B2E" },
+  { "slug": "learning",     "label": "Learning",      "color": "#2E8C6B" },
+  { "slug": "selfhosted",   "label": "Self-Hosting",  "color": "#8C2E5C" }
+]

@@ -1,0 +1,38 @@
+---
+import RepoCard from './RepoCard.astro';
+import categoriesData from '../data/categories.json';
+
+interface Props {
+  repos: any[];
+}
+const { repos } = Astro.props;
+const categoriesBySlug = Object.fromEntries(categoriesData.map((c) => [c.slug, c]));
+---
+<p class="count" id="result-count"></p>
+<div class="grid" id="repo-grid">
+  {repos.map((repo) => (
+    <RepoCard repo={repo} category={categoriesBySlug[repo.category]} />
+  ))}
+</div>
+<div class="empty" id="empty-state" style="display:none;"></div>
+
+<style>
+  .count {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin: 0 0 16px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+  }
+  .empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+</style>

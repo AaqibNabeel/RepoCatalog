@@ -1,0 +1,110 @@
+---
+import { ICONS } from './icons.js';
+
+interface Repo {
+  id: string;
+  owner: string;
+  name: string;
+  url: string;
+  description: string;
+  category: string;
+  stars: number;
+  language: string | null;
+  last_commit: string;
+  editor_note: string;
+}
+interface Category { slug: string; label: string; color: string; }
+
+interface Props {
+  repo: Repo;
+  category: Category;
+}
+
+const { repo, category } = Astro.props;
+
+function formatStars(n: number) {
+  if (n >= 1000) return (n / 1000).toFixed(n % 1000 === 0 ? 0 : 1) + 'k';
+  return String(n);
+}
+
+function timeAgo(dateStr: string) {
+  const days = Math.floor((Date.now() - new Date(dateStr).getTime()) / 86400000);
+  if (days <= 0) return 'today';
+  if (days === 1) return '1d ago';
+  if (days < 30) return `${days}d ago`;
+  const months = Math.floor(days / 30);
+  return `${months}mo ago`;
+}
+---
+<a
+  class="repo-card"
+  href={repo.url}
+  target="_blank"
+  rel="noopener noreferrer"
+  data-repo-id={repo.id}
+  data-category={repo.category}
+  data-search-blob={`${repo.owner} ${repo.name} ${repo.description} ${repo.category}`.toLowerCase()}
+>
+  <div class="card-tab" style={{ background: category.color }}></div>
+  <div class="card-body">
+    <p class="card-name"><span class="owner">{repo.owner}/</span>{repo.name}</p>
+    <p class="card-desc">{repo.description}</p>
+    <p class="card-note">{repo.editor_note}</p>
+    <div class="card-footer">
+      <span><svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor"><path d={ICONS.star} /></svg> {formatStars(repo.stars)}</span>
+      {repo.language && <span>{repo.language}</span>}
+      <span><svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor"><path d={ICONS.clock} /></svg> {timeAgo(repo.last_commit)}</span>
+    </div>
+  </div>
+</a>
+
+<style>
+  .repo-card {
+    background: var(--card);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius);
+    display: flex;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 150ms ease;
+  }
+  .repo-card:hover { border-color: var(--accent); }
+
+  .card-tab { width: 6px; flex-shrink: 0; }
+  .card-body { padding: 14px 16px; flex: 1; min-width: 0; }
+
+  .card-name {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0 0 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .card-name .owner { color: var(--ink-soft); font-weight: 400; }
+
+  .card-desc { font-size: 13px; line-height: 1.45; margin: 0 0 10px; }
+
+  .card-note {
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin: 0 0 12px;
+    border-left: 2px solid var(--hairline);
+    padding-left: 8px;
+  }
+
+  .card-footer {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-soft);
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .card-footer svg { vertical-align: -1px; }
+</style>

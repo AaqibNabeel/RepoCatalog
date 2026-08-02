@@ -1,0 +1,19 @@
+{
+  "name": "repocatalog",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "add-repo": "node scripts/add-repo.mjs",
+    "discover": "node scripts/discover.mjs",
+    "merge-candidates": "node scripts/merge-candidates.mjs",
+    "health-check": "node scripts/health-check.mjs"
+  },
+  "dependencies": {
+    "astro": "^4.16.0",
+    "fuse.js": "^7.0.0"
+  }
+}
