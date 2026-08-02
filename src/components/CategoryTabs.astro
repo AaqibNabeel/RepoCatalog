@@ -6,6 +6,8 @@ interface Props {
   activeSlug?: string | null;
 }
 const { activeSlug = null } = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <div class="tabs" id="category-tabs">
   <a
