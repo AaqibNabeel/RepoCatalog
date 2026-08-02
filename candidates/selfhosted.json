@@ -1,1 +1,47 @@
-[]
+[
+  {
+    "id": "Sanjeet990/Astroluma",
+    "owner": "Sanjeet990",
+    "name": "Astroluma",
+    "url": "https://github.com/Sanjeet990/Astroluma",
+    "description": "Astroluma is a feature-rich, user-friendly dashboard designed to help you manage multiple aspects of your daily tasks and services. ",
+    "category": "selfhosted",
+    "tags": [],
+    "stars": 775,
+    "language": "JavaScript",
+    "last_commit": "2025-07-04",
+    "added_at": null,
+    "archived": false,
+    "editor_note": "Fastest fuzzy finder for terminal file search, once you use it ctrl+r feels broken."
+  },
+  {
+    "id": "kiriwalawren/nixflix",
+    "owner": "kiriwalawren",
+    "name": "nixflix",
+    "url": "https://github.com/kiriwalawren/nixflix",
+    "description": "NixOS Media Server Configuration",
+    "category": "selfhosted",
+    "tags": [],
+    "stars": 536,
+    "language": "Nix",
+    "last_commit": "2026-08-02",
+    "added_at": null,
+    "archived": false,
+    "editor_note": "Fastest fuzzy finder for terminal file search, once you use it ctrl+r feels broken."
+  },
+  {
+    "id": "ancsemi/Haven",
+    "owner": "ancsemi",
+    "name": "Haven",
+    "url": "https://github.com/ancsemi/Haven",
+    "description": "Self-hosted private chat: no cloud, no telemetry, no Big Tech. Discord alternative that runs on your own machine.",
+    "category": "selfhosted",
+    "tags": [],
+    "stars": 512,
+    "language": "JavaScript",
+    "last_commit": "2026-08-02",
+    "added_at": null,
+    "archived": false,
+    "editor_note": "Fastest fuzzy finder for terminal file search, once you use it ctrl+r feels broken."
+  }
+]
