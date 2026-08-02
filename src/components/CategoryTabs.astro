@@ -8,16 +8,19 @@ interface Props {
 const { activeSlug = null } = Astro.props;
 ---
 <div class="tabs" id="category-tabs">
-  <a class:list={['tab', { active: !activeSlug }]} href={`${import.meta.env.BASE_URL}/`}>all</a>
+  <a
+    class:list={['tab', { active: !activeSlug }]}
+    href={`${base}/`}
+  >
+    all
+  </a>
+
   {categories.map((cat) => (
     <a
       class:list={['tab', { active: activeSlug === cat.slug }]}
-      href={`${import.meta.env.BASE_URL}/category/${cat.slug}/`}
+      href={`${base}/category/${cat.slug}/`}
     >
-      <svg width="10" height="10" viewBox="0 0 16 16" fill="currentColor" style={{ color: cat.color }}>
-        <path d={ICONS.gitBranch} />
-      </svg>
-      {cat.label}
+      ...
     </a>
   ))}
 </div>
