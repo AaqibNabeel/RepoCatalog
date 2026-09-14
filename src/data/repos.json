@@ -10,9 +10,9 @@
       "self-hosted",
       "notes"
     ],
-    "stars": 21513,
+    "stars": 21534,
     "language": null,
-    "last_commit": "2026-09-13",
+    "last_commit": "2026-09-14",
     "added_at": "2026-08-01",
     "archived": false,
     "editor_note": "The plugin ecosystem, not the app itself — great for extending Obsidian."
@@ -27,9 +27,9 @@
     "tags": [
       "no-code"
     ],
-    "stars": 131708,
+    "stars": 131829,
     "language": "TypeScript",
-    "last_commit": "2026-09-13",
+    "last_commit": "2026-09-14",
     "added_at": "2026-08-01",
     "archived": false,
     "editor_note": "Fastest way to sketch a flow diagram without opening Figma."
@@ -45,9 +45,9 @@
       "cli",
       "self-hosted"
     ],
-    "stars": 180780,
+    "stars": 180886,
     "language": "Go",
-    "last_commit": "2026-09-11",
+    "last_commit": "2026-09-14",
     "added_at": "2026-08-01",
     "archived": false,
     "editor_note": "The easiest on-ramp to running open models on your own machine."
@@ -62,7 +62,7 @@
     "tags": [
       "cli"
     ],
-    "stars": 24368,
+    "stars": 24371,
     "language": "Go",
     "last_commit": "2026-09-11",
     "added_at": "2026-08-01",
@@ -79,7 +79,7 @@
     "tags": [
       "beginner-friendly"
     ],
-    "stars": 24361,
+    "stars": 24377,
     "language": "Jupyter Notebook",
     "last_commit": "2024-08-18",
     "added_at": "2026-08-01",
@@ -96,7 +96,7 @@
     "tags": [
       "self-hosted"
     ],
-    "stars": 19739,
+    "stars": 19744,
     "language": "TypeScript",
     "last_commit": "2026-09-10",
     "added_at": "2026-08-01",
@@ -111,9 +111,9 @@
     "description": "Community extensions for the Raycast launcher.",
     "category": "productivity",
     "tags": [],
-    "stars": 7740,
+    "stars": 7742,
     "language": "TypeScript",
-    "last_commit": "2026-09-13",
+    "last_commit": "2026-09-14",
     "added_at": "2026-08-01",
     "archived": false,
     "editor_note": "Browse this before building your own — someone likely made it."
@@ -126,7 +126,7 @@
     "description": "Beautifully designed components built with Radix and Tailwind.",
     "category": "design",
     "tags": [],
-    "stars": 123669,
+    "stars": 123719,
     "language": "TypeScript",
     "last_commit": "2026-09-12",
     "added_at": "2026-08-01",
@@ -141,9 +141,9 @@
     "description": "State-of-the-art ML models for text, vision, and audio.",
     "category": "ai",
     "tags": [],
-    "stars": 165252,
+    "stars": 165796,
     "language": "Python",
-    "last_commit": "2026-09-13",
+    "last_commit": "2026-09-14",
     "added_at": "2026-08-01",
     "archived": false,
     "editor_note": "The default starting point for almost any pretrained model."
@@ -158,9 +158,9 @@
     "tags": [
       "cli"
     ],
-    "stars": 82957,
+    "stars": 82976,
     "language": "Go",
-    "last_commit": "2026-09-13",
+    "last_commit": "2026-09-14",
     "added_at": "2026-08-01",
     "archived": false,
     "editor_note": "Once you use fzf for file/history search, ctrl+r feels broken."
@@ -175,7 +175,7 @@
     "tags": [
       "beginner-friendly"
     ],
-    "stars": 208960,
+    "stars": 209007,
     "language": "HTML",
     "last_commit": "2026-07-14",
     "added_at": "2026-08-01",
@@ -192,9 +192,9 @@
     "tags": [
       "self-hosted"
     ],
-    "stars": 113973,
+    "stars": 114100,
     "language": "TypeScript",
-    "last_commit": "2026-09-13",
+    "last_commit": "2026-09-14",
     "added_at": "2026-08-01",
     "archived": false,
     "editor_note": "The closest thing to Google Photos you can run on your own NAS."
@@ -207,9 +207,9 @@
     "description": "Open source AirDrop alternative, cross-platform.",
     "category": "productivity",
     "tags": [],
-    "stars": 90745,
+    "stars": 90991,
     "language": "Dart",
-    "last_commit": "2026-09-12",
+    "last_commit": "2026-09-14",
     "added_at": "2026-08-01",
     "archived": false,
     "editor_note": "Works between phone/laptop/desktop regardless of OS — no cloud."
@@ -224,9 +224,9 @@
     "tags": [
       "self-hosted"
     ],
-    "stars": 59932,
+    "stars": 59976,
     "language": "Clojure",
-    "last_commit": "2026-09-11",
+    "last_commit": "2026-09-14",
     "added_at": "2026-08-01",
     "archived": false,
     "editor_note": "A genuinely usable open-source Figma alternative, not a toy."
@@ -239,9 +239,9 @@
     "description": "Make websites accessible for AI agents.",
     "category": "ai",
     "tags": [],
-    "stars": 114426,
+    "stars": 114576,
     "language": "Python",
-    "last_commit": "2026-09-12",
+    "last_commit": "2026-09-13",
     "added_at": "2026-08-01",
     "archived": false,
     "editor_note": "If you're building browser-automation agents, start here first."
@@ -254,7 +254,7 @@
     "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
     "category": "ai",
     "tags": [],
-    "stars": 170197,
+    "stars": 170299,
     "language": "HTML",
     "last_commit": "2026-09-09",
     "added_at": "2026-08-02",
@@ -269,7 +269,7 @@
     "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
     "category": "ai",
     "tags": [],
-    "stars": 104865,
+    "stars": 104943,
     "language": "Jupyter Notebook",
     "last_commit": "2026-09-10",
     "added_at": "2026-08-02",
@@ -284,7 +284,7 @@
     "description": "Vane is an AI-powered answering engine.",
     "category": "ai",
     "tags": [],
-    "stars": 36715,
+    "stars": 36758,
     "language": "TypeScript",
     "last_commit": "2026-09-01",
     "added_at": "2026-08-02",
@@ -299,7 +299,7 @@
     "description": "🤗 The largest hub of ready-to-use datasets for AI models with fast, easy-to-use and efficient data manipulation tools",
     "category": "ai",
     "tags": [],
-    "stars": 21967,
+    "stars": 21968,
     "language": "Python",
     "last_commit": "2026-09-11",
     "added_at": "2026-08-02",
@@ -314,9 +314,9 @@
     "description": "Swap GPT for any LLM by changing a single line of code. Xinference lets you run open-source, speech, and multimodal models on cloud, on-prem, or your laptop — all through one unified, production-ready inference API.",
     "category": "ai",
     "tags": [],
-    "stars": 9568,
+    "stars": 9566,
     "language": "Python",
-    "last_commit": "2026-09-12",
+    "last_commit": "2026-09-14",
     "added_at": "2026-08-02",
     "archived": false,
     "editor_note": "Fastest fuzzy finder for terminal file search, once you use it ctrl+r feels broken."
@@ -344,7 +344,7 @@
     "description": "Chronos: Pretrained Models for Time Series Forecasting",
     "category": "ai",
     "tags": [],
-    "stars": 5849,
+    "stars": 5856,
     "language": "Python",
     "last_commit": "2026-09-08",
     "added_at": "2026-08-02",
@@ -359,7 +359,7 @@
     "description": "Implement a reasoning LLM in PyTorch from scratch, step by step",
     "category": "ai",
     "tags": [],
-    "stars": 5214,
+    "stars": 5217,
     "language": "Jupyter Notebook",
     "last_commit": "2026-09-06",
     "added_at": "2026-08-02",
@@ -374,9 +374,9 @@
     "description": "Curated list of the best truly open-source AI projects, models, tools, and infrastructure. Daily updated.",
     "category": "ai",
     "tags": [],
-    "stars": 4721,
+    "stars": 4724,
     "language": "Python",
-    "last_commit": "2026-09-13",
+    "last_commit": "2026-09-14",
     "added_at": "2026-08-02",
     "archived": false,
     "editor_note": "Fastest fuzzy finder for terminal file search, once you use it ctrl+r feels broken."
@@ -404,7 +404,7 @@
     "description": "AI system design guide for engineers building production AI systems and evals.",
     "category": "ai",
     "tags": [],
-    "stars": 3267,
+    "stars": 3287,
     "language": null,
     "last_commit": "2026-08-15",
     "added_at": "2026-08-02",
@@ -419,7 +419,7 @@
     "description": "A community-driven collection of RAG (Retrieval-Augmented Generation) frameworks, projects, and resources. Contribute and explore the evolving RAG ecosystem.",
     "category": "ai",
     "tags": [],
-    "stars": 1999,
+    "stars": 1998,
     "language": null,
     "last_commit": "2026-07-28",
     "added_at": "2026-08-02",
@@ -434,9 +434,9 @@
     "description": "Unified multimodal backend for AI data apps",
     "category": "ai",
     "tags": [],
-    "stars": 1620,
+    "stars": 1621,
     "language": "Python",
-    "last_commit": "2026-09-12",
+    "last_commit": "2026-09-13",
     "added_at": "2026-08-02",
     "archived": false,
     "editor_note": "Fastest fuzzy finder for terminal file search, once you use it ctrl+r feels broken."
@@ -449,7 +449,7 @@
     "description": "🤖 The most comprehensive list of AI agents, frameworks & tools in 2026. 300+ resources · 20+ categories · Updated monthly.",
     "category": "ai",
     "tags": [],
-    "stars": 1808,
+    "stars": 1817,
     "language": null,
     "last_commit": "2026-06-10",
     "added_at": "2026-08-02",
@@ -464,9 +464,9 @@
     "description": "Curating Top Open Source Apps for Homelab Enthusiasts",
     "category": "selfhosted",
     "tags": [],
-    "stars": 2445,
+    "stars": 2448,
     "language": "JavaScript",
-    "last_commit": "2026-09-13",
+    "last_commit": "2026-09-14",
     "added_at": "2026-08-02",
     "archived": false,
     "editor_note": "Fastest fuzzy finder for terminal file search, once you use it ctrl+r feels broken."
@@ -481,7 +481,7 @@
     "tags": [],
     "stars": 1209,
     "language": "JavaScript",
-    "last_commit": "2026-09-12",
+    "last_commit": "2026-09-13",
     "added_at": "2026-08-02",
     "archived": false,
     "editor_note": "Fastest fuzzy finder for terminal file search, once you use it ctrl+r feels broken."
